@@ -33,17 +33,29 @@ This section aims to guide the user through how to use our website. Account crea
 This view is for the general public to see. They will be able to view:
 * A list of every project submitted by the vendors. These projects will include issues, progress, budgets, and an overall timeline of the project.
 
+<img src="mockup_images/LandingPageMockUpTop.png">
+<img src="mockup_images/LandingPageMockUpBottom.png">
+<img src="mockup_images/ExistingReport.png">
+<img src="mockup_images/DashboardMockup.png">
+
+
+
 ### Vendor View
 This view is for the IV&V vendors. They can also see items listed under [public view](#public-view). They will be able to:
 * Create and edit projects
 * Append, edit, or delete issues and timeline events to existing projects
 * Receive feedback from ETS employees
 
+<img src="mockup_images/ReportsMockup.png">
+
+
 ### ETS Employee View
 This view is for the ETS employees. They can also see items listed under [public view](#public-view). They will be able to:
 * View submissions of new projects and issues from vendors
 * Create and manage ETS or vendor accounts
 * Provide feedback to vendors on issues and projects
+
+<img src="mockup_images/ReportsMockup.png">
 
 ## Developer Guide
 
