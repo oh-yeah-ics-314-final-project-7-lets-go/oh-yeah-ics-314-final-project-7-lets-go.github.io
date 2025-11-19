@@ -4,4 +4,5 @@ show_downloads: false
 theme: jekyll-theme-cayman
 github:
     is_project_page: true
+    owner: "oh-yeah-ics-314-final-project-7-lets-go"
     repository_url: https://github.com/oh-yeah-ics-314-final-project-7-lets-go/oh-yeah-ics-314-final-project-7-lets-go.github.io
