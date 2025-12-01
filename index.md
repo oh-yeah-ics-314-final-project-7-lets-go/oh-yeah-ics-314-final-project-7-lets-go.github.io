@@ -10,6 +10,8 @@ You can read more in the HACC proposal listed [here](https://hacc.hawaii.gov/wp-
 
 ## Deployment
 
+![ci-badge](https://github.com/oh-yeah-ics-314-final-project-7-lets-go/ets/workflows/ci-nextjs-application-template/badge.svg)
+
 Our app's live demo is currently deployed [here](https://pseudo-hacc-ets.vercel.app/), and is hosted by Vercel.
 
 ## Maintainers
