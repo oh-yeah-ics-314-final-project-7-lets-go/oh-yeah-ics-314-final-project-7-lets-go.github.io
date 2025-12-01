@@ -4,7 +4,7 @@
 
 ## About ETS
 
-ETS gives ease of access for ETS employees to review and create projects reports sent in by the state's Independent Verification and Validation (IV&V) vendors by standardizing the information sent in by each vendor.
+ETS gives ease of access for ETS employees to review and create projects and reports sent in by the state's Independent Verification and Validation (IV&V) vendors by standardizing the information sent in by each vendor.
 
 You can read more in the HACC proposal listed [here](https://hacc.hawaii.gov/wp-content/uploads/2025/10/Challenge-Use-Case-2025-ETS-Project-Review-Web-Application.pdf).
 
@@ -43,38 +43,80 @@ Our project management is [issue driven](https://courses.ics.hawaii.edu/ics314f2
 
 This section aims to guide the user through how to use our website. Account creation is accessible to ETS employees only.
 
+The homepage view offers a welcome page to users.
+
+<img src="images/public/homepage.png">
+
+### Project Workflow
+
+Vendors can create a project by following the instructions on the create project page. Their project will immediately be in a pending state so that they can add appropriate issues, events, and monthly reports.
+
+When a project is **approved**, new events or issues can't be created, and existing ones can't be edited. They will only be able to be created/edited when the containing project is in a pending or denied status. 
+
+If a project is **denied**, the vendor should revise or complete information for their project and request a review again.
+
+* Events, issues, and comments do not have their own statuses.
+* Comments can be added or edited regardless of project status.
+* Vendors will be able to create, edit, and delete their own comments, but ETS employees can delete (but not edit) other users' comments on top of that.
+
+Vendors will also be able to create monthly reports for their project. The data entered should be the progress up to the **end** of that month & year, not the progress made during that time.
+
+* Like projects, reports also have an approval system. If denied, the vendor can also request a review from an employee.
+
+When a report is **approved**, it will not be editable. It can only be edited when in a denied or pending state. Reports can be created or edited regardless of project status.
+
+
 ### Public View
 This view is for the general public to see. They will be able to view:
 * Search through existing reports and projects 
-* A list of every project submitted by the vendors. These projects will include issues, progress, budgets, and an overall timeline of the project.
-* Users can also log in, given that they are just a vendor or employee that's logged out. Otherwise, users cannot create their own account.
 
-<img src="mockup_images/homepage.png">
-<img src="mockup_images/dashboard.png">
+<img src="images/public/dashboard_search.png">
+
+* A list of every project submitted by the vendors. These projects will include progress, budgets, and an overall timeline of the project.
+
+<img src="images/public/dashboard_report.png">
+
+* Users can also log in, given that they are just a vendor or employee that's logged out. Otherwise, users cannot create their own account.
 
 ### Vendor View
 This view is for the IV&V vendors. They can also see items listed under [public view](#public-view). They will be able to:
 * Create and edit projects
+
+<img src="images/vendor/createproject.png">
+
+* View a list of projects that they have created
+
+<img src="images/vendor/projectsview.png">
+
+* See the status that their project or reports are in
+
+<img src="images/vendor/projectview.png">
+<img src="images/vendor/reportview.png">
+
 * Append, edit, or delete issues and timeline events to existing projects
-* Receive feedback from ETS employees
 
-<img src="mockup_images/submit_report.png">
-<img src="mockup_images/reports.png">
-<img src="mockup_images/report.png">
-<img src="mockup_images/comment.png">
-<img src="mockup_images/event.png">
-<img src="mockup_images/issue.png">
-<img src="mockup_images/change_password.png">
-
+<img src="images/vendor/projectpg2view.png">
 
 ### ETS Employee View
 This view is for the ETS employees. They can also see items listed under [public view](#public-view). They will be able to:
+
 * View submissions of new projects and issues from vendors
-* Approve/reject existing projects
+
+<img src="images/employee/projectsmanagement.png">
+
+* Approve/reject existing projects and reports
+
+<img src="images/employee/projectmanagement.png">
+<img src="images/employee/reportmanagement.png">
+
 * Create and manage ETS or vendor accounts
+
+<img src="images/employee/usermanagement.png">
+
 * Provide feedback to vendors on issues and projects
 
-<img src="mockup_images/users.png">
+<img src="images/employee/commentmanagement.png">
+
 
 ## Developer Guide
 
@@ -97,3 +139,30 @@ $ npm run dev
 ```
 
 The website will be accessible at http://localhost:3000, NextJS will also show where the website is being hosted in the console window.
+
+### Modifications
+
+In the event that you want to modify or contribute to this project, you will find:
+
+* Report forms: Under `/src/components`, then look for the appropriate folder. The bulk of our report forms are actually components as to not clash with server-side rendering. Our naming convention uses `<Action><Feature>Form.tsx` for the files. So, if you wanted to modify the create event form, you would find it under `/src/components/project/AddEventForm.tsx`.
+* Directory structure: Our project uses the Next.JS [app router](https://nextjs.org/docs/app). That is, if you want to modify something like the projects page, you will find the appropriate file at `/src/app/projects/page.tsx`, not ` /src/app/projects.tsx`.
+
+We have some additional rules when committing to our repository:
+* Your last commit must have no ESLint errors (`npm run lint`), must pass the Next.JS build system (`npm run build`), and Playwright browser tests (`npx playwright test`).
+* Variables are camelCase. Page name exports are PascalCase.
+
+ESLint will usually sort out readability errors, so we don't have a rigorous styling guide yet.
+
+### Browser Tests
+
+Testing is done with Playwright. You can run the browser tests with the following command:
+
+```
+$ npx playwright test
+```
+
+If all goes well, all tests should pass. You may need to first install the browsers required for testing with:
+
+```
+$ npx playwright install
+```
