@@ -117,6 +117,20 @@ This view is for the ETS employees. They can also see items listed under [public
 
 <img src="images/employee/commentmanagement.png">
 
+## Community Feedback
+
+After sending out our application to a few evaluators, we received the following feedback:
+
+### I liked:
+* "*I like how professional it feels—it’s soulless exactly how a .gov website should be*"
+* No loading bars – things just happened
+
+### But (Future improvements):
+* Should clean up items from the template, e.g. it doesn't make sense to have the login dropdown only contain one entry: the sign-in button.
+* Make adjustments for mobile devices
+* UI quality of life improvements: allow users to enter prices with commas
+* Implement instant validation when filling out the various forms (e.g. events)
+* Show more information on the dashboard page for a report
 
 ## Developer Guide
 
