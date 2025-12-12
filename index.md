@@ -78,6 +78,10 @@ This view is for the general public to see. They will be able to view:
 
 * Users can also log in, given that they are just a vendor or employee that's logged out. Otherwise, users cannot create their own account.
 
+* A dark theme is also offered for lighter viewing.
+
+<img src="images/public/homepagedark.png">
+
 ### Vendor View
 This view is for the IV&V vendors. They can also see items listed under [public view](#public-view). They will be able to:
 * Create and edit projects
@@ -95,7 +99,8 @@ This view is for the IV&V vendors. They can also see items listed under [public 
 
 * Append, edit, or delete issues and timeline events to existing projects
 
-<img src="images/vendor/projectpg2view.png">
+<img src="images/vendor/issueview.png">
+<img src="images/vendor/eventview.png">
 
 ### ETS Employee View
 This view is for the ETS employees. They can also see items listed under [public view](#public-view). They will be able to:
